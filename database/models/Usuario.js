@@ -18,13 +18,13 @@ module.exports =  function(sequelize, dataTypes) {
         contrasenia : {
             type : dataTypes.STRING(250)
         },
-        created_at: {
+        createdAt: {
             type : dataTypes.DATE
         },
-        updated_at: {
+        updatedAt: {
             type : dataTypes.DATE
         },
-        deleted_at: {
+        deletedAt: {
             type : dataTypes.DATE
         },
     };
@@ -32,12 +32,12 @@ module.exports =  function(sequelize, dataTypes) {
     let config = {
         tableName : "usuarios",
         timestamps : true,
-        underscored : true
+        underscored : false
     }
 
     let Usuario = sequelize.define(alias, cols, config);
 
-    Usuario.associate= function (models) {
+    Usuario.associate = function (models) {
         Usuario.hasMany(models.Producto,{
             as: "productos",
             foreignKey: "usuario_id", 
@@ -45,13 +45,7 @@ module.exports =  function(sequelize, dataTypes) {
         });
     }
 
-        
-
-
-
-
-
-
+    
     return Usuario;
     
 }

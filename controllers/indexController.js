@@ -7,16 +7,16 @@ const indexController = {
 
   let filtrado = {
           include:[
-            {association: "usuarios"}],
+            {model: "usuarios"}],
           order:[
-            ["created_at", "DESC"]
+            ["createdAt", "DESC"]
             ]}
 
     db.Producto.findAll(filtrado)
 
     .then(function(results) {
-      //return res.send(results)
-       return res.render("index", {lista: results})
+      return res.send(results)
+       return res.render("/", {lista: results})
    }).catch(function(err) {
       return console.log(err);
    });

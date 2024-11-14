@@ -26,15 +26,15 @@ module.exports =  function(sequelize, dataTypes) {
             type : dataTypes.STRING(250)
         },
 
-        created_at: {
+        createdAt: {
             type : dataTypes.DATE
         },
 
-        updated_at: {
+        updatedAt: {
             type : dataTypes.DATE
         },
 
-        deleted_at: {
+        deletedAt: {
             type : dataTypes.DATE
         },
         comentarios:{
@@ -49,8 +49,6 @@ module.exports =  function(sequelize, dataTypes) {
     }
 
     let Producto = sequelize.define(alias, cols, config);
-
-    Actor = sequelize.define(alias,cols,config);
 
     Producto.associate = function(models){
         Producto.belongsTo(models.Usuario,{
