@@ -19,6 +19,8 @@
   box-sizing: border-box;
 }
 
+
+
 html,
 body {
   min-height: 100vh;
@@ -189,6 +191,12 @@ hr {
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
 }
+
+.imagenProductos {
+  max-height: 200px;
+  min-height: 200px;
+  object-fit: cover;
+  }
 
 .product-box_data {
   padding: 15px;
