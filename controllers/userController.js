@@ -37,8 +37,34 @@ const userController = {
                 console.log("Error al registrar el usuario:", err); 
                 return res.send("Hubo un problema al registrar el usuario.");
             });
-    }
-    
+    },
+    login: (req, res)=>{
+        return res.render("login")
+    },
+    loginPost: function (req,res) {
+        let form = req.body;
+        let filtrado = {
+            where: {email: form.email}
+        }
+        db.Usuario.findOne(filtrado)
+        .then(function (result) {
+            if (!result){
+                return res.send("No hay un usuario con este mail")
+            }else{
+                let check = bcryptjs.compareSync(form.contrasenia,result.contrasenia) 
+                if (check) {
+                    req.session.user = result.dataValues; 
+                    
+                    return res.redirect("/");
+                } else{
+                    return res.send("La contraseña es incorrecta") 
+                }
+            }
+        })
+        .catch(function (err) {
+            console.log(err);    
+        }) 
+    } 
     
 }
 

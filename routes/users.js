@@ -7,7 +7,12 @@ router.get('/', function(req, res, next) {
   res.send('prueba');
 });
 
+/* Register */
 router.get("/register", userController.register);
 router.post("/register", userController.registerPost);
+
+/* Login */
+router.get('/login', userController.login)
+router.post('/login', userController.loginPost)
 
 module.exports = router;
