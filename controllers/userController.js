@@ -64,8 +64,12 @@ const userController = {
         .catch(function (err) {
             console.log(err);    
         }) 
-    } 
-    
-}
+    }, 
+    logout: function (req,res) {
+        req.session.destroy();
+        return res.redirect("/")
+    }
+};
+
 
 module.exports = userController;
