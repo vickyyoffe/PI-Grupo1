@@ -10,10 +10,10 @@ const indexController = {
           as: 'usuarios', // Asegúrate de usar el alias definido en las relaciones
         },
       ],
-      order: [["createdAt", "DESC"]],
+      order: [["created_at", "DESC"]],
     })
       .then(function (results) {
-        return res.render("index", { lista: results }); // Paso 'lista' a la vista
+        return res.render( "index",{ lista: results }); // Paso 'lista' a la vista
       })
       .catch(function (err) {
         console.log(err);

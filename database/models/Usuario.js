@@ -18,13 +18,13 @@ module.exports =  function(sequelize, dataTypes) {
         contrasenia : {
             type : dataTypes.STRING(250)
         },
-        createdAt: {
+        created_at: {
             type : dataTypes.DATE
         },
-        updatedAt: {
+        updated_at: {
             type : dataTypes.DATE
         },
-        deletedAt: {
+        deleted_at: {
             type : dataTypes.DATE
         },
     };
@@ -32,7 +32,7 @@ module.exports =  function(sequelize, dataTypes) {
     let config = {
         tableName : "usuarios",
         timestamps : true,
-        underscored : false
+        underscored : true
     }
 
     let Usuario = sequelize.define(alias, cols, config);

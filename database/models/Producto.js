@@ -26,19 +26,20 @@ module.exports =  function(sequelize, dataTypes) {
             type : dataTypes.STRING(250)
         },
 
-        createdAt: {
-            type : dataTypes.DATE
-        },
-
-        updatedAt: {
-            type : dataTypes.DATE
-        },
-
-        deletedAt: {
-            type : dataTypes.DATE
-        },
-        comentarios:{
+        comentario : {
             type : dataTypes.STRING(250)
+        },
+
+        created_at: {
+            type : dataTypes.DATE
+        },
+
+        updated_at: {
+            type : dataTypes.DATE
+        },
+
+        deleted_at: {
+            type : dataTypes.DATE
         }
     };
 

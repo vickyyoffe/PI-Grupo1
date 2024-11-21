@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
-	
-	<title> Mercado Liebre Argentina</title>
-			<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
-</head>
-<body>
-	<!-- Header -->
-	<% if (locals.user != undefined) { %> <!-- el mismo que este en APP.JS LINEA 35 (locals.user)-->
-		<%- include('./partials/headerLogueado') %>
-	  <% } else { %>
-	   <%- include('./partials/header') %>
-	  <% } %>
-	<!-- /Header -->
-	
-	<!-- Banner -->
-	<div class="banner">
-		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
-	</div>
-	<!-- /Banner -->
+  <%- include('./partials/head') %> <!-- Incluimos el contenido del head -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Productos</h2>
-		
-		</div>
-	</div>
-	
+  <body>
+    <!-- Header -->
+    <% if (locals.user != undefined) { %>
+      <%- include('./partials/headerLogueado') %>
+    <% } else { %>
+      <%- include('./partials/header') %>
+    <% } %>
+    <!-- /Header -->
 
-	<!-- footer -->
-	<footer class="main-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-credit-card"></i>
-						<h2>Pagá con tarjeta o en efectivo</h2>
-						<p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y
-							siempre es seguro!</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-gift"></i>
-						<h2>Envío gratis desde $ 1.999</h2>
-						<p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un
-							beneficio de Mercado Puntos.</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-user-shield"></i>
-						<h2>Seguridad, de principio a fin</h2>
-						<p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás
-							siempre protegido.</p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- /footer -->
-</body>	
+    <!-- Banner -->
+    <div class="banner">
+      <img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+    </div>
+    <!-- /Banner -->
+
+    <!-- Novedades -->
+    <div class="container products-wrapper">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="products-title">Productos</h2>
+
+		  <% for (let i = 0; i < lista.length; i++) { %>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <section class="product-box">
+                    
+                    <a href="/product/id/<%=lista[i].id%>">
+                        <figure class="product-box_image">
+                            <img src= "public/images/products/"<%=lista[i].foto %> alt="cafetera moulinex">
+                        </figure>
+                        <article class="product-box_data">
+                            <h2><%= lista[i].nombre%></h2>
+                            <p><%= lista[i].descripcion %></p>
+                            <p><a href="/user/profile/id/<%=lista[i].usuarios.id%>">Creado por: <%= lista[i].usuarios.nombre%></p></a>
+
+                        </article>
+                    </a>
+                </section>
+            </div>
+            <%} %>
+		  	<h1>aca deberia haber algo</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <article class="footer-data">
+              <i class="fas fa-credit-card"></i>
+              <h2>Pagá con tarjeta o en efectivo</h2>
+              <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="footer-data">
+              <i class="fas fa-gift"></i>
+              <h2>Envío gratis desde $ 1.999</h2>
+              <p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="footer-data">
+              <i class="fas fa-user-shield"></i>
+              <h2>Seguridad, de principio a fin</h2>
+              <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+  </body>
 </html>
