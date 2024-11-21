@@ -87,9 +87,36 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminá esta etiqueta h2 y construí la sección con los resultados de búsqueda. <br>
-			////////////////
+			<h2 class="col-12"> <i>
+				<div class="container products-wrapper">
+					<div class="row">
+					
+						<% if (lista.length === 0) { %>
+							<div class="col-12">
+								<p>No hay resultados para su criterio de búsqueda.</p>
+							</div>
+						<% } else { %>
+						<% for (let i = 0; i < lista.length; i++) { %>
+							<div class="col-12 col-sm-6 col-lg-3">
+								<section class="product-box">
+									
+									<a href="/product/detalle/<%=lista[i].id%>">
+										<figure class="product-box_image">
+											<img src= "public/images/products/"<%=lista[i].foto %> alt="cafetera moulinex">
+										</figure>
+										<article class="product-box_data">
+											<h2><%= lista[i].nombre%></h2>
+											<p>Creado por: <%= lista[i].usuarios.nombre%></p>
+				
+										</article>
+									</a>
+								</section>
+							</div>
+							<%} %>
+							<% } %>
+								
+					</div>
+				</div>
 			</h2>
 
 
