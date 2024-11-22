@@ -110,6 +110,14 @@ hr {
   color: var(--gray);
   cursor: pointer;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
 
 
 /*====== Main Navbar ======*/
@@ -429,34 +437,77 @@ hr {
 }
 
 /*====== Formularios ======*/
-.form-label {
-  display: inline-block;
-  font-size: 1.6em;
-  margin: 10px 0;
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.formLOG {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin-top: 50px; /* Se agrega un margen para separar el formulario del header */
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 15px;
 }
 
 .form-input {
   display: block;
   width: 100%;
   height: 45px;
-  margin-bottom: 15px;
   font-size: 1.5em;
   border-radius: 8px;
-  border: none;
-  border: solid 1px var(--gray);
+  border: 1px solid var(--gray);
   padding: 0 15px;
 }
 
-.error{
-  color: rgb(209, 0, 0);
-  font-size: 1.4em;
+.form-input:focus {
+  outline: none;
+  border-color: var(--light-blue);
+  box-shadow: 0 0 5px var(--light-blue);
 }
 
-textarea.form-input {
-  min-height: 140px;
-  resize: vertical;
-  padding: 15px;
+/* Estilos para el botón: gris constante */
+body .formLOG button[type="submit"].btn {
+  background-color: #b4aeaea7 !important; /* Gris claro constante */
+  color: #000 !important; /* Letra en negro */
+  font-size: 1.6em;
+  border: 2px solid #000 !important; /* Borde negro */
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: none; /* Quitamos la mayúscula */
+  width: 100%; /* Ancho completo */
 }
+
+/* Evitar cambio de color al pasar el mouse o tocar */
+body .formLOG button[type="submit"].btn:hover {
+  background-color: #b4aeaea7 !important; /* Mantener gris claro al pasar el mouse */
+  border: 2px solid #000 !important; /* Mantener borde negro */
+}
+
+/* Evitar que otros estilos de Bootstrap afecten al botón */
+body .formLOG button[type="submit"].btn {
+  background-color: #b4aeaea7 !important; /* Forzar el color gris */
+  color: #000 !important; /* Forzar color de texto negro */
+  border-radius: 8px !important; /* Mantener bordes redondeados */
+}
+
 
 /*====== Profile ======*/
 .info-usuario{
