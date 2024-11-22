@@ -171,10 +171,14 @@ header {
 
 /*====== Products ======*/
 .products-wrapper {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 30px; /* Ajusta este valor según sea necesario */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
+  
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
@@ -182,12 +186,14 @@ header {
 }
 
 .product-box {
-  background-color: #ffffff;
-  border-radius: 5px;
+  flex: 1 1 calc(20% - 20px); /* Reduce el tamaño del producto */
+  max-width: calc(20% - 20px);
+  box-sizing: border-box;
+  border-radius: 12px;
   overflow: hidden;
-  transition: 300ms;
-  margin: 20px 0;
+  margin: 5px; /* Agrega un margen alrededor de cada producto */
 }
+
 
 .product-box a {
   display: block;
@@ -198,10 +204,12 @@ header {
 }
 
 .imagenProductos {
-  max-height: 200px;
-  min-height: 200px;
-  object-fit: cover;
-  }
+  max-height: 180px; /* Reduce ligeramente la altura */
+  min-height: 180px; /* Asegura consistencia */
+  object-fit: cover; /* Mantiene la proporción de las imágenes */
+  border-radius: 10px; /* Ajusta este valor para redondear las esquinas */
+}
+
 
 .product-box_data {
   padding: 15px;
@@ -282,12 +290,12 @@ header {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: var(--black);
   font-size: 3.5em;
 }
 
 .footer-data h2 {
-  color: var(--gray);
+  color: var(--black);
   font-size: 2.4em;
   font-weight: 400;
 }
@@ -506,6 +514,14 @@ body .formLOG button[type="submit"].btn {
   background-color: #b4aeaea7 !important; /* Forzar el color gris */
   color: #000 !important; /* Forzar color de texto negro */
   border-radius: 8px !important; /* Mantener bordes redondeados */
+}
+
+.label {
+  font-size: 1.5em; /* Tamaño del texto */
+  font-weight: 600; /* Negrita para mejor visibilidad */
+  color: var(--gray); /* Mantiene el color definido en tu diseño */
+  margin-bottom: 8px; /* Espaciado entre el label y el input */
+  display: block; /* Asegura que el texto del label esté encima del input */
 }
 
 

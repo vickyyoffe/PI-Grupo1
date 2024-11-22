@@ -18,31 +18,21 @@
     <!-- /Banner -->
 
     <!-- Novedades -->
-    <div class="container products-wrapper">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="products-title">Productos</h2>
-
-		  <% for (let i = 0; i < lista.length; i++) { %>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    
-                    <a href="/product/<%=lista[i].id%>">
-                        <figure class="product-box_image">
-                          <img src="/images/products/<%= lista[i].foto %>" alt="<%= lista[i].foto %>">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= lista[i].nombre%></h2>
-                            <p><%= lista[i].descripcion %></p>
-                            <p>Creado por: <%= lista[i].usuarios.nombre%></p>
-
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <%} %>
-        </div>
-      </div>
+    <div class="products-wrapper">
+      <% for (let i = 0; i < lista.length; i++) { %>
+        <section class="product-box">
+          <a href="/product/<%= lista[i].id %>">
+            <figure class="product-box_image">
+              <img src="/images/products/<%= lista[i].foto %>" alt="<%= lista[i].foto %>">
+            </figure>
+            <article class="product-box_data">
+              <h2><%= lista[i].nombre %></h2>
+              <p><%= lista[i].descripcion %></p>
+              <p>Creado por: <%= lista[i].usuarios.nombre %></p>
+            </article>
+          </a>
+        </section>
+      <% } %>
     </div>
 
     <!-- Footer -->
