@@ -13,7 +13,7 @@
 
     <!-- Banner -->
     <div class="banner">
-      <img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+      <img src="/images/apple.65d0db786b372da606b0 (1) 2.jpg" alt="Banner de ofertas">
     </div>
     <!-- /Banner -->
 
@@ -27,21 +27,20 @@
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
                     
-                    <a href="/product/id/<%=lista[i].id%>">
+                    <a href="/product/<%=lista[i].id%>">
                         <figure class="product-box_image">
-                            <img src= "public/images/products/"<%=lista[i].foto %> alt="cafetera moulinex">
+                          <img src="/images/products/<%= lista[i].foto %>" alt="<%= lista[i].foto %>">
                         </figure>
                         <article class="product-box_data">
                             <h2><%= lista[i].nombre%></h2>
                             <p><%= lista[i].descripcion %></p>
-                            <p><%=lista[i].usuarios.id%>">Creado por: <%= lista[i].usuarios.nombre%></p>
+                            <p>Creado por: <%= lista[i].usuarios.nombre%></p>
 
                         </article>
                     </a>
                 </section>
             </div>
             <%} %>
-		  	<h1>aca deberia haber algo</h1>
         </div>
       </div>
     </div>

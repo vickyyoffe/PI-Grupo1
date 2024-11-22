@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Implemento session ANTES DE LAS RUTAS
 app.use(session({
   secret: "myapp", //hash para un usuario

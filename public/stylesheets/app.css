@@ -152,17 +152,14 @@ hr {
   border-bottom: solid 1px var(--gray);
 }
 
-
-
 /*====== Banner ======*/
 .banner {
-  background-image: url(/public/images/img-home-banner.jpg);
+  background-image: url(/public/images/apple.65d0db786b372da606b0\ \(1\)\ 2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100px;
+  height: 200px;  
 }
-
 
 /*====== Products ======*/
 .products-wrapper {
