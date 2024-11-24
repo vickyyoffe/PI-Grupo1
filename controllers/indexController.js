@@ -1,3 +1,4 @@
+const { Association } = require('sequelize');
 const db = require('../database/models'); // Reemplazo por models correctamente
 const op = db.Sequelize.Op;
 
@@ -6,8 +7,7 @@ const indexController = {
     db.Producto.findAll({
       include: [
         {
-          model: db.Usuario, // Se usa el modelo asociado correctamente
-          as: 'usuarios', // Asegúrate de usar el alias definido en las relaciones
+          association: 'usuarios', // Se usa el modelo asociado correctamente
         },
       ],
       order: [["created_at", "DESC"]],
