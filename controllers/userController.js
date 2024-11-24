@@ -1,3 +1,4 @@
+const { Association } = require('sequelize');
 const db = require('../database/models');
 const bcryptjs = require('bcryptjs');
 
@@ -68,7 +69,21 @@ const userController = {
     logout: function (req,res) {
         req.session.destroy();
         return res.redirect("/")
+    },
+    profile: function (req, res) {
+        let id = req.params.id;
+    
+        db.Usuario.findByPk(id, {
+            include: [{ association: "productos" }]
+        })
+        .then(function (results) {
+            return res.render("profile", { lista: results });
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
     }
+    
 };
 
 

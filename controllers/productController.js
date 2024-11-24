@@ -42,6 +42,7 @@ const productosController = {
   
       db.Producto.findAll(filtrado)
           .then(function(results) {
+      
               console.log('Resultados de búsqueda:', results);
               // Verifica si no hay resultados
               if (results.length === 0) {

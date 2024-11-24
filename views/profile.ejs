@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('./partials/head') %> 
+</head>
+
+  <!-- Header -->
+  <% if (locals.user != undefined) { %>
+    <%- include('./partials/headerLogueado') %>
+  <% } else { %>
+    <%- include('./partials/header') %>
+  <% } %>
+  <!-- /Header -->
+
+  <!-- Datos del usuario -->
+	<section class="info-usuario container products-wrapper">
+		<div class="row">
+			<div class="data-container col-6">
+				<div class="d-flex align-items-center ">
+					<h1 class="main-title"><%= lista.nombre%>
+						<% if(locals.user != undefined && locals.user.id == lista.id) { %>
+						<% } %>
+					</h1>
+				
+				</div>
+				<div>
+					<ul class="">
+						<li><%= lista.email%> </li>
+						<li>200 seguidores</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Datos del usuario -

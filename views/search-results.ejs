@@ -34,12 +34,13 @@
 									
 									<a href="/product/detalle/<%=lista[i].id%>">
 										<figure class="product-box_image">
-											<img src= "public/images/products/"<%=lista[i].foto %> alt="cafetera moulinex">
+											<img src= "/images/products/<%=lista[i].foto %>" alt="cafetera moulinex">
 										</figure>
 										<article class="product-box_data">
 											<h2><%= lista[i].nombre%></h2>
-											<p>Creado por: <%= lista[i].usuarios.nombre%></p>
-				
+											<a href="/users/profile/<%= lista[i].usuarios.id %>"> 
+												<p>Creado por: <%= lista[i].usuarios.nombre%></p>
+											</a>
 										</article>
 									</a>
 								</section>
