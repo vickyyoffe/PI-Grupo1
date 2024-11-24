@@ -9,9 +9,15 @@ const productosController = {
     },
     store: function (req, res) {
         let productos = req.body;
-        db.Producto.create(productos)
+        let objeto = {
+          usuario_id: req.session.user.id, 
+          nombre:productos.producto,
+          foto:productos.imagen,
+          descripcion: productos.descripcion,
+        }
+        db.Producto.create(objeto)
           .then(() => {
-            return res.redirect("/product");
+            return res.redirect("/");
           })
           .catch((err) => {
             console.error(err);
