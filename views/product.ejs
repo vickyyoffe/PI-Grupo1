@@ -24,9 +24,11 @@
     
       <div class="product-detail-container">
         <h1 class="card-title"><%= lista.nombre %></h1>
+        <p class="h2">Creado por: <%= lista.usuarios.nombre %></p>
         <p class="card-text"><%= lista.descripcion %></p>
         <div class="product-detail-image">
           <img src="/images/products/<%= lista.foto %>" alt="<%= lista.nombre %>">
+          
         </div>
       </div>
       

@@ -4,7 +4,11 @@ const bcryptjs = require('bcryptjs');
 
 const userController = {
     register: (req, res)=>{
-        return res.render("register")
+        if (req.session.user != undefined){ //USER es la propiedad que puse en el controller
+            return res.redirect("/");
+          }
+         else {return res.render("register")}
+
     },
     registerPost: function (req, res) {  
         let form = req.body;
@@ -40,7 +44,12 @@ const userController = {
             });
     },
     login: (req, res)=>{
-        return res.render("login")
+        if (req.session.user != undefined){ //USER es la propiedad que puse en el controller
+            return res.redirect("/");
+          }
+         else {
+            return res.render("login")}
+         
     },
     loginPost: function (req,res) {
         let form = req.body;
