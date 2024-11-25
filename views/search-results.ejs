@@ -18,6 +18,7 @@
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
+		</div>
 			
 			<h2 class="col-12"> <i>
 				<div class="container products-wrapper">
@@ -29,30 +30,26 @@
 							</div>
 						<% } else { %>
 						<% for (let i = 0; i < lista.length; i++) { %>
-							<div class="col-12 col-sm-6 col-lg-3">
 								<section class="product-box">
-									
 									<a href="/product/detalle/<%=lista[i].id%>">
 										<figure class="product-box_image">
 											<img src= "/images/products/<%=lista[i].foto %>" alt="cafetera moulinex">
 										</figure>
 										<article class="product-box_data">
-											<h2><%= lista[i].nombre%></h2>
+											<h3 class="h2"><%= lista[i].nombre %></h3>
 											<a href="/users/profile/<%= lista[i].usuarios.id %>"> 
-												<p>Creado por: <%= lista[i].usuarios.nombre%></p>
+											<p >Creado por: <%= lista[i].usuarios.nombre%></p>
 											</a>
 										</article>
 									</a>
 								</section>
-							</div>
 							<%} %>
 							<% } %>
 								
 					</div>
 				</div>
 			</h2>
-
-
+	</div>
 	<!-- Footer -->
     <%- include('./partials/footer') %>
     <!-- /Footer -->

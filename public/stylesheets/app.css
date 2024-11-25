@@ -32,6 +32,7 @@ body {
   background-color: var(--light-gray);
 }
 
+
 ul,
 ol {
   list-style: none;
@@ -168,17 +169,21 @@ header {
 }
 
 /*====== Products ======*/
+.h2 {
+  font-size: 20px;
+
+}
 .products-wrapper {
   margin-top: 30px; /* Ajusta este valor según sea necesario */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
   
 .products-title {
-  font-size: 2.4em;
+  font-size: 20px;
   font-weight: 400;
   color: var(--gray);
 }
@@ -190,6 +195,7 @@ header {
   border-radius: 12px;
   overflow: hidden;
   margin: 5px; /* Agrega un margen alrededor de cada producto */
+  
 }
 
 
@@ -218,13 +224,13 @@ header {
 }
 
 .product-box_data h2 {
-  font-size: 2.4em;
+  font-size: 20px;
   font-weight: 300;
   margin: 0;
 }
 
 .product-box_data span {
-  font-size: 1.5em;
+  font-size: 20px;
   font-weight: 300;
   color: var(--green);
   margin: 0 0 0 10px;
@@ -315,37 +321,78 @@ header {
   padding: 15px 0;
 }
 
-
 /*====== Product Detail ======*/
-.product-detail-wrapper {
+.card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
-  margin-top: 40px;
+  justify-content: center;
+}
+.product-detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Alinea verticalmente */
+  align-items: center; /* Alinea horizontalmente */
+  text-align: center; /* Centra el texto */
+  width: 90%; /* Ocupa todo el ancho disponible */
+}
+
+.card-body {
+  text-align: center;
+  font-family: var(--base-font-family); 
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--black); 
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1.6em;
+  line-height: 1.8;
+  color: var(--gray); 
+  margin-bottom: 20px;
+}
+
+.card-body img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
 }
 
 .product-detail-image {
-  flex: 1 1 45%; /* Toma el 45% del ancho disponible */
-  max-width: 500px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+  margin: 0 auto;
+  width: 100%; /* Usa todo el ancho disponible */
+  max-width: 500px; /* Limita el tamaño máximo */
+  height: 400px; /* Establece una altura fija para el contenedor */
+  overflow: hidden; /* Evita que la imagen se desborde */
 }
 
 .product-detail-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  max-width: 100%; /* Hace que la imagen ocupe el 100% del ancho del contenedor */
+  max-height: 100%; /* Ajusta la altura máxima para que la imagen no se desborde */
+  object-fit: cover; /* Ajusta la imagen manteniendo las proporciones */
+  border-radius: 12px; /* Bordes redondeados para un estilo más elegante */
 }
 
 .product-detail-info {
-  flex: 1 1 45%; /* Toma el 45% del ancho disponible */
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
 }
 
 .product-detail-info h1 {
@@ -426,32 +473,13 @@ header {
   margin-bottom: 10px;
 }
 
-.product-detail-info .reviews .review .review-text {
-  font-size: 1.4em;
-  color: var(--gray);
-  margin-bottom: 15px;
-}
-
-.product-detail-info .reviews .review .rating {
-  font-size: 1.6em;
-  color: var(--yellow);
-}
-
-.product-detail-info .back-link {
-  font-size: 1.4em;
-  color: var(--blue);
-  text-decoration: none;
-  margin-top: 20px;
-  display: inline-block;
-  transition: color 0.3s;
-}
-
-.product-detail-info .back-link:hover {
-  color: var(--dark-blue);
-}
+.produ
 
 
 /*====== Search Results ======*/
+.id {
+  font-size: 20px;
+}
 .products-wrapper {
   margin-top: 30px; /* Ajusta este valor según sea necesario */
   display: flex;
@@ -498,17 +526,20 @@ header {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  font-size: 20px;
+
+
 }
 
 .product-box_data h2 {
-  font-size: 1.8em;
+  font-size: 20px;
   font-weight: 500;
   margin: 0;
   color: var(--dark-gray);
 }
 
 .product-box_data p {
-  font-size: 1.4em;
+  font-size: 20px;
   color: var(--gray);
   margin-top: 10px;
 }
@@ -532,7 +563,6 @@ header {
 }
 
 
-
 /*====== Formularios ======*/
 .body {
   display: flex;
@@ -550,7 +580,9 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: center;
-  margin-top: 50px; /* Se agrega un margen para separar el formulario del header */
+  margin-top: 0px; /* Se agrega un margen para separar el formulario del header */
+  justify-content: center;
+
 }
 
 .title {
