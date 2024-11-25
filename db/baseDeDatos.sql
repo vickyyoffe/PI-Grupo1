@@ -6,6 +6,7 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(255),
 email VARCHAR(255) UNIQUE,
 contrasenia VARCHAR(255),
+foto VARCHAR(255),
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
@@ -24,15 +25,15 @@ deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
 INSERT INTO usuarios VALUES
-(DEFAULT,"Victoria","vickyyoffe@gmail.com", "123", DEFAULT,DEFAULT,DEFAULT);
+(DEFAULT,"Victoria","vickyyoffe@gmail.com","123","vicky.jpg", DEFAULT,DEFAULT,DEFAULT);
 INSERT INTO usuarios VALUES
-(DEFAULT,"Julieta","julimiel@gmail.com", "456", DEFAULT,DEFAULT,DEFAULT);
+(DEFAULT,"Julieta","julimiel@gmail.com","456","juli.jpg", DEFAULT,DEFAULT,DEFAULT);
 INSERT INTO usuarios VALUES
-(DEFAULT,"Pilar","piliantunez@gmail.com", "789", DEFAULT,DEFAULT,DEFAULT);
+(DEFAULT,"Pilar","piliantunez@gmail.com","789", "pili.jpg",  DEFAULT,DEFAULT,DEFAULT);
 INSERT INTO usuarios VALUES
-(DEFAULT,"Brian","brian@gmail.com", "brian", DEFAULT,DEFAULT,DEFAULT);
+(DEFAULT,"Brian","brian@gmail.com", "brian","brian.jpg", DEFAULT,DEFAULT,DEFAULT);
 INSERT INTO usuarios VALUES
-(DEFAULT,"Luis","luis@gmail.com", "luis", DEFAULT,DEFAULT,DEFAULT);
+(DEFAULT,"Luis","luis@gmail.com", "luis","luis.jpg", DEFAULT,DEFAULT,DEFAULT);
 
 
 INSERT INTO productos VALUES(DEFAULT, 1, "Iphone 14", "iphone-14-128gb-midnight.jpg","El iPhone 14 es un smartphone de Apple lanzado en 2022, que ofrece mejoras en la cámara, un rendimiento eficiente con el chip A15 Bionic y una pantalla OLED Super Retina.", DEFAULT,DEFAULT,DEFAULT);

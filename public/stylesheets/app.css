@@ -655,8 +655,14 @@ body .formLOG button[type="submit"].btn {
 
 .foto-perfil{
   border-radius: 50%;
+  width: 100%;
+  height: auto;
 }
-
+.perfil{
+  border-radius: 50%;
+  width: 40%;
+  height: auto;
+}
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;

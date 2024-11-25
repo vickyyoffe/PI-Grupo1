@@ -10,13 +10,16 @@ module.exports =  function(sequelize, dataTypes) {
 
         },
         nombre : {
-            type : dataTypes.STRING(250)
+            type : dataTypes.STRING(255)
         },
         email : {
-            type : dataTypes.STRING(250)
+            type : dataTypes.STRING(255)
         },
         contrasenia : {
-            type : dataTypes.STRING(250)
+            type : dataTypes.STRING(255)
+        },
+        foto: {
+            type : dataTypes.STRING(255) 
         },
         created_at: {
             type : dataTypes.DATE
